@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="QR Code Scanner">
+        <div class="slds-p-left_medium">
+            Scan QRCode to validate the Credential.
+            <p class="margin-vertical-small">
+                <lightning-button label="Scan QRCode" 
+                    variant="brand"
+                    disabled={scanButtonDisabled}
+                    icon-name="utility:cases"
+                    title="Open a camera view and look for a barcode to scan"
+                    onclick={handleScanQR}>
+                </lightning-button> 
+            </p>
+        </div> 
+        <div if:true={isSpinner} class="slds-is-relative">
+            <lightning-spinner alternative-text="Loading" size="medium" variant="brand"></lightning-spinner>
+        </div>       
+    </lightning-card>
+</template>
